@@ -5,8 +5,9 @@ import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 
 /**
- * date：2021-07-14
- * desc：
+ * @author: chen_kai
+ * @date：2021-07-16
+ * @desc：
  */
 @Entity
 public class Person {

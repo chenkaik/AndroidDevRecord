@@ -9,14 +9,15 @@ import org.greenrobot.greendao.query.WhereCondition;
 import java.util.List;
 
 /**
- * date：2021-07-14
- * desc：用于完成对数据表的操作
+ * @author: chen_kai
+ * @date：2021-07-15
+ * @desc：用于完成对数据表的操作
  */
 public class CommonDaoUtils<T> {
 
-    private DaoSession mDaoSession;
-    private Class<T> entityClass;
-    private AbstractDao<T, Long> entityDao;
+    private final DaoSession mDaoSession;
+    private final Class<T> entityClass;
+    private final AbstractDao<T, Long> entityDao;
 
     public CommonDaoUtils(Class<T> pEntityClass, AbstractDao<T, Long> pEntityDao) {
         DaoManager mManager = DaoManager.getInstance();

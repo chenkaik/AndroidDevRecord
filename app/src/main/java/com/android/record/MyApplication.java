@@ -5,8 +5,9 @@ import android.app.Application;
 import com.android.record.db.DaoManager;
 
 /**
- * date：2021-07-15
- * desc：
+ * @author chen_kai
+ * @date：2021-07-15
+ * @desc：程序入口
  */
 public class MyApplication extends Application {
 

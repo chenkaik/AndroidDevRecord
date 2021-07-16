@@ -9,8 +9,9 @@ import com.android.record.greendao.DaoSession;
 import org.greenrobot.greendao.query.QueryBuilder;
 
 /**
- * date：2021-07-14
- * desc：创建数据库、创建数据库表、包含增删改查的操作
+ * @author: chen_kai
+ * @date：2021-07-16
+ * @desc：创建数据库、创建数据库表、包含增删改查的操作
  */
 public class DaoManager {
 
@@ -18,8 +19,9 @@ public class DaoManager {
     private static final String DB_NAME = "RECORD_DB";
 
     private Application mApplication;
-
-    // 多线程中要被共享的使用volatile关键字修饰
+    /**
+     * 多线程中要被共享的使用volatile关键字修饰
+     */
     private volatile static DaoManager manager = new DaoManager();
     private DaoMaster mDaoMaster;
     private DaoMaster.DevOpenHelper mHelper;

@@ -10,11 +10,19 @@ import com.android.record.databinding.ActivityGreenDaoBinding
 import com.android.record.db.DaoManager
 import com.android.record.db.DaoUtilsStore
 import com.android.record.entity.User
+import com.android.record.greendao.UserDao
 import java.util.*
 
+/**
+ * @author: chen_kai
+ * @date：2021-07-15
+ * @desc：greenDao测试页面
+ */
 class GreenDaoActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val TAG = "GreenDaoActivity"
+    companion object {
+        private const val TAG = "GreenDaoActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +83,7 @@ class GreenDaoActivity : AppCompatActivity(), View.OnClickListener {
                     Log.e(TAG, "onClick: " + user.userName);
                     Log.e(TAG, "onClick: " + user.age);
                 }
+                DaoUtilsStore.getInstance().userDaoUtils.queryByQueryBuilder(UserDao.Properties.Id.eq(1))
             }
         }
 

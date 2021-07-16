@@ -9,6 +9,11 @@ import android.view.View;
 import com.android.record.activity.GreenDaoActivity;
 import com.android.record.databinding.ActivityMainBinding;
 
+/**
+ * @author: chen_kai
+ * @date：2021-07-15
+ * @desc：主页面
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
