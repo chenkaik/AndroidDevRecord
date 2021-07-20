@@ -5,23 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.SpeechActivity">
+
+    <EditText
+        android:id="@+id/edit_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/to_Green_Dao"
+        android:id="@+id/btn_test_play"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Green_Dao的使用"
-        android:textAllCaps="false"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
-
-    <Button
-        android:id="@+id/to_TTs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="汉字转语音"
-        android:textAllCaps="false"
+        android:text="测试语音播放"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
 
