@@ -17,6 +17,7 @@ import java.util.*
  * @author: chen_kai
  * @date：2021-07-15
  * @desc：greenDao测试页面
+ * https://www.jianshu.com/p/53083f782ea2
  */
 class GreenDaoActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -56,12 +57,18 @@ class GreenDaoActivity : AppCompatActivity(), View.OnClickListener {
                 DaoUtilsStore.getInstance().userDaoUtils.insert(user1)
             }
             R.id.btn_delete -> {
-                val userList = DaoUtilsStore.getInstance().userDaoUtils.queryAll()
-                if (userList.size > 0) {
-                    val isSuccess = DaoUtilsStore.getInstance().userDaoUtils.delete(userList[userList.size - 1])
-                    if (isSuccess) {
-                        Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show()
-                    }
+//                val userList = DaoUtilsStore.getInstance().userDaoUtils.queryAll()
+//                if (userList.size > 0) {
+//                    val isSuccess = DaoUtilsStore.getInstance().userDaoUtils.delete(userList[userList.size - 1])
+//                    if (isSuccess) {
+//                        Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show()
+//                    }
+//                }
+
+                // 删除id大于5的数据
+                val isSuccess = DaoUtilsStore.getInstance().userDaoUtils.deleteItem(UserDao.Properties.Id.gt(5))
+                if (isSuccess) {
+                    Toast.makeText(this, "删除成功", Toast.LENGTH_SHORT).show()
                 }
             }
             R.id.btn_update -> {
@@ -83,7 +90,23 @@ class GreenDaoActivity : AppCompatActivity(), View.OnClickListener {
                     Log.e(TAG, "onClick: " + user.userName);
                     Log.e(TAG, "onClick: " + user.age);
                 }
-                DaoUtilsStore.getInstance().userDaoUtils.queryByQueryBuilder(UserDao.Properties.Id.eq(1))
+                // id查询
+//                val list: List<User> = DaoUtilsStore.getInstance().userDaoUtils.queryByQueryBuilder(UserDao.Properties.Id.eq(5))
+                // name查询
+//                val list: List<User> = DaoUtilsStore.getInstance().userDaoUtils.queryByQueryName(UserDao.Properties.UserName.eq("更新姓名31"))
+                // id条件查询 姓名张三21 id大于1小于10
+                val list: List<User> = DaoUtilsStore.getInstance()
+                        .userDaoUtils
+                        .queryByQueryName(UserDao.Properties.UserName.eq("张三21"),
+                                UserDao.Properties.Id.gt(4),
+                                UserDao.Properties.Id.lt(10))
+                Log.e(TAG, "list== " + list.size)
+                for (u in list) {
+                    Log.e(TAG, "onClick: id= " + u.id);
+                    Log.e(TAG, "onClick: userId= " + u.userId);
+                    Log.e(TAG, "onClick: userName= " + u.userName);
+                    Log.e(TAG, "onClick: age= " + u.age);
+                }
             }
         }
 
