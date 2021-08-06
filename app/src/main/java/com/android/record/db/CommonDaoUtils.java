@@ -36,6 +36,20 @@ public class CommonDaoUtils<T> {
     }
 
     /**
+     * 存在就更新 不存在就存储
+     */
+    public void saveOrUpdate(T item) {
+        mDaoSession.insertOrReplace(item);
+    }
+
+    /**
+     * 刷新
+     */
+    public void refresh(T item) {
+        mDaoSession.refresh(item);
+    }
+
+    /**
      * 插入多条数据，在子线程操作
      */
     public boolean insertMultiple(final List<T> pEntityList) {
