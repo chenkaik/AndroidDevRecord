@@ -13,4 +13,54 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--水平分界线-->
+    <style name="DividerLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/divider_line_color</item>
+    </style>
+
+    <!--通用的RecyclerView风格-->
+    <style name="recyclerViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <!--隐藏滚动条-->
+        <item name="android:scrollbars">none</item>
+        <!--不显示波纹效果-->
+        <item name="android:overScrollMode">never</item>
+        <!--默认线性布局-->
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <!--向下弹出的缩放动画-->
+    <style name="AnimScaleTop">
+        <item name="android:windowEnterAnimation">@anim/scale_top_in</item>
+        <item name="android:windowExitAnimation">@anim/scale_top_out</item>
+    </style>
+
+    <!--向右弹出的缩放动画-->
+    <style name="AnimScaleLeft">
+        <item name="android:windowEnterAnimation">@anim/scale_left_in</item>
+        <item name="android:windowExitAnimation">@anim/scale_left_out</item>
+    </style>
+
+    <!--向左弹出的缩放动画-->
+    <style name="AnimScaleRight">
+        <item name="android:windowEnterAnimation">@anim/scale_right_in</item>
+        <item name="android:windowExitAnimation">@anim/scale_right_out</item>
+    </style>
+
+    <!--向上弹出的平移动画-->
+    <style name="AnimTranslateBottom">
+        <item name="android:windowEnterAnimation">@anim/translate_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_bottom_out</item>
+    </style>
+
+    <!--向上弹出的缩放动画-->
+    <style name="AnimScaleBottom">
+        <item name="android:windowEnterAnimation">@anim/scale_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/scale_bottom_out</item>
+    </style>
+
 </resources>
